@@ -1,0 +1,83 @@
+
+
+body {
+  --primary-color: rgb(8, 8, 60);
+  font-family: sans-serif;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.card {
+  align-items: center;
+  background-image: url('./assets/working.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--primary-color);
+  cursor: pointer;
+  display: flex;
+  filter: grayscale(0.7);
+  height: 400px;
+  justify-content: center;
+  transition: 0.3s;
+  width: 500px;
+}
+
+.card:hover{
+  filter: unset;
+}
+
+.card-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.card-wrapper::before{
+  border: 1px solid lightblue;
+  content: '';
+  display: block;
+  height: 100px;
+  opacity: 0;
+  position: absolute;
+  transition: 0.3s;
+  width: 100px;
+}
+
+.card:hover > .card-wrapper::before {
+  height: 400px;
+  opacity: 1;
+  width: 500px;
+}
+
+.card-wrapper h2{
+  font-size: 40px;
+  letter-spacing: 4px;
+  margin: 0;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.card-wrapper p {
+  font-size: 0;
+  font-weight: bold;
+  opacity: 0;
+  text-transform: uppercase;
+  transition: 0.3s;
+  visibility: hidden;
+}
+
+.card:hover > .card-wrapper p {
+  font-size: 14px;
+  opacity: 1;
+  visibility: visible;
+}
